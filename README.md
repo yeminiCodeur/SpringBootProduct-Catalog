@@ -1,5 +1,5 @@
 # Gest-Product-Angular
-Spring Data
-configiuration JpaRepository
+#Spring Data
+configuration JpaRepository
 Rest Repository
 Projection
