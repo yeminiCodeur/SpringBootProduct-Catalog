@@ -9,13 +9,19 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import javax.transaction.Transactional;
 import java.util.List;
-
+// use pour le rest repository
 @RepositoryRestResource
-@CrossOrigin("*")
+@Transactional
+@CrossOrigin("*") // permit d'accepter les requests
 public interface ProductDao extends JpaRepository<Product, Long> {
+    // le nom de path de recherche
     @RestResource(path = "/designation")
     List<Product> findByDescriptionContains(@Param("desc") String desc);
+
     @RestResource(path = "/pagination")
     Page<Product> findByDescriptionContains(@Param("desc") String desc, Pageable pageable);
+    @RestResource(path = "/byCategory")
+    Page<Product> findByCategory_Id(@Param("c") long c, Pageable pageable);
 }
