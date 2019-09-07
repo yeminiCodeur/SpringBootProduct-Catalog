@@ -11,4 +11,5 @@ import javax.transaction.Transactional;
 @RepositoryRestResource
 @CrossOrigin("*") // permit d'accepter les requests
 public interface CategoryDao extends JpaRepository<Category,Long> {
+    // on peut ajouter les toutes operations qu'on voulait...
 }

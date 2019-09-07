@@ -29,7 +29,7 @@ public class CatalogServiceApplication implements CommandLineRunner {
         restConfiguration.exposeIdsFor(Product.class);
         restConfiguration.exposeIdsFor(Category.class);
         /*
-        Test l'insertion
+        //Test l'insertion
         Category c1 =  new Category();
         Category c3=  new Category();
         Category c2 =  new Category();
@@ -58,6 +58,6 @@ public class CatalogServiceApplication implements CommandLineRunner {
         productDao.findAll().forEach(p->{
             System.out.println(p.getDescription());
         });
-       */
+         */
     }
 }
